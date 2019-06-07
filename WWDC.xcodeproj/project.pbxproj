@@ -26,6 +26,7 @@
 		4DDF6A782177A00C008E5539 /* DownloadsManagementTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF6A772177A00C008E5539 /* DownloadsManagementTableCellView.swift */; };
 		4DEEC3A32051C8D400376595 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEC3A22051C8D400376595 /* TestUtilities.swift */; };
 		4DF6641620C8A85000FD1684 /* SessionsTableViewController+SupportingTypesAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF6641520C8A85000FD1684 /* SessionsTableViewController+SupportingTypesAndExtensions.swift */; };
+		72511E4A22AA67C9004E627C /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72511E4922AA67C9004E627C /* DocumentsViewController.swift */; };
 		DD0159A71ECFE26200F980F1 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0159A61ECFE26200F980F1 /* DeepLink.swift */; };
 		DD0159A91ED09F5D00F980F1 /* AppCoordinator+Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0159A81ED09F5D00F980F1 /* AppCoordinator+Bookmarks.swift */; };
 		DD0159CF1ED0CD3A00F980F1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0159CE1ED0CD3A00F980F1 /* PreferencesWindowController.swift */; };
@@ -380,6 +381,7 @@
 		4DDF6A772177A00C008E5539 /* DownloadsManagementTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsManagementTableCellView.swift; sourceTree = "<group>"; };
 		4DEEC3A22051C8D400376595 /* TestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		4DF6641520C8A85000FD1684 /* SessionsTableViewController+SupportingTypesAndExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionsTableViewController+SupportingTypesAndExtensions.swift"; sourceTree = "<group>"; };
+		72511E4922AA67C9004E627C /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		DD0159A61ECFE26200F980F1 /* DeepLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		DD0159A81ED09F5D00F980F1 /* AppCoordinator+Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Bookmarks.swift"; sourceTree = "<group>"; };
 		DD0159CE1ED0CD3A00F980F1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -745,6 +747,14 @@
 			name = Downloads;
 			sourceTree = "<group>";
 		};
+		72511E4822AA665B004E627C /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				72511E4922AA67C9004E627C /* DocumentsViewController.swift */,
+			);
+			name = Documents;
+			sourceTree = "<group>";
+		};
 		DD0159CD1ED0CD1D00F980F1 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +854,7 @@
 		DD36A4BF1E478CF100B2EA88 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				72511E4822AA665B004E627C /* Documents */,
 				4DA9C4CF20EC096800710354 /* Downloads */,
 				DDCE7ECB1EA7A0E400C7A3CA /* Base */,
 				DDC678201EDB955600A4E19C /* Bookmarks */,
@@ -1914,7 +1925,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTLINT_MIN=\"0.24\"\n\nlessThanOrEqual() {\n    [  \"$1\" = \"`echo -e \"$1\\n$2\" | sort -V | head -n1`\" ]\n}\n\nlessThan() {\n    [ \"$1\" = \"$2\" ] && return 1 || lessThanOrEqual $1 $2\n}\n\nif command -v swiftlint >/dev/null; then\n    if lessThan `swiftlint version` $SWIFTLINT_MIN; then\n        echo \"warning: WWDC for macOS uses SwiftLint ${SWIFTLINT_MIN} or above to ensure a consistent codestyle. Please be aware that the installed version of SwiftLint may behave unexpectedly.\"\n    fi\n\n    swiftlint\nelse\n    echo \"error: SwiftLint not installed, please run 'brew install swiftlint' or download from https://github.com/realm/SwiftLint\"\n    return 1\nfi";
+			shellScript = "#SWIFTLINT_MIN=\"0.24\"\n#\n#lessThanOrEqual() {\n#    [  \"$1\" = \"`echo -e \"$1\\n$2\" | sort -V | head -n1`\" ]\n#}\n#\n#lessThan() {\n#    [ \"$1\" = \"$2\" ] && return 1 || lessThanOrEqual $1 $2\n#}\n#\n#if command -v swiftlint >/dev/null; then\n#    if lessThan `swiftlint version` $SWIFTLINT_MIN; then\n#        echo \"warning: WWDC for macOS uses SwiftLint ${SWIFTLINT_MIN} or above to ensure a consistent codestyle. Please be aware #that the installed version of SwiftLint may behave unexpectedly.\"\n#    fi\n#\n#    swiftlint\n#else\n#    echo \"error: SwiftLint not installed, please run 'brew install swiftlint' or download from https://github.com/realm/#SwiftLint\"\n#    return 1\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1974,6 +1985,7 @@
 				DD7F385F1EABD631002D8C00 /* WWDCTabViewController.swift in Sources */,
 				4D66CA50217E2C800006A8C9 /* DownloadsManagementTableRowView.swift in Sources */,
 				DDCE7ED91EA7A86600C7A3CA /* AppCoordinator.swift in Sources */,
+				72511E4A22AA67C9004E627C /* DocumentsViewController.swift in Sources */,
 				DD0159D11ED0CEF500F980F1 /* PreferencesCoordinator.swift in Sources */,
 				DDEDFCF31ED92F2A002477C8 /* TextualFilter.swift in Sources */,
 				DD0159A91ED09F5D00F980F1 /* AppCoordinator+Bookmarks.swift in Sources */,

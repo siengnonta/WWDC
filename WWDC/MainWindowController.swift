@@ -13,6 +13,7 @@ enum MainWindowTab: Int {
     case featured
     case schedule
     case videos
+    case documents
 
     func stringValue() -> String {
         var name = ""

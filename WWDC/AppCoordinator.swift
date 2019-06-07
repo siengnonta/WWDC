@@ -30,6 +30,7 @@ final class AppCoordinator {
     var featuredController: FeaturedContentViewController
     var scheduleController: SessionsSplitViewController
     var videosController: SessionsSplitViewController
+    var documentsController: DocumentsViewController
 
     var currentPlayerController: VideoPlayerViewController?
 
@@ -106,6 +107,13 @@ final class AppCoordinator {
         videosItem.label = "Videos"
         videosItem.initialFirstResponder = videosController.listViewController.tableView
         tabController.addTabViewItem(videosItem)
+        
+        // Documents
+        documentsController = DocumentsViewController()
+        documentsController.identifier = NSUserInterfaceItemIdentifier(rawValue: "Documents")
+        let documentsItem = NSTabViewItem(viewController: documentsController)
+        documentsItem.label = "Documents"
+        tabController.addTabViewItem(documentsItem)
 
         self.windowController = windowController
 
